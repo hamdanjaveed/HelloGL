@@ -19,6 +19,9 @@
 		AC7907EE1777E03C006C700A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC7907D61777E03C006C700A /* UIKit.framework */; };
 		AC7907F61777E03C006C700A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AC7907F41777E03C006C700A /* InfoPlist.strings */; };
 		AC7907F81777E03C006C700A /* HelloGLTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7907F71777E03C006C700A /* HelloGLTests.m */; };
+		AC7908031777E11E006C700A /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC7908011777E11E006C700A /* GLKit.framework */; };
+		AC7908041777E11E006C700A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC7908021777E11E006C700A /* OpenGLES.framework */; };
+		AC7908061777E125006C700A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC7908051777E125006C700A /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +51,9 @@
 		AC7907F31777E03C006C700A /* HelloGLTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HelloGLTests-Info.plist"; sourceTree = "<group>"; };
 		AC7907F51777E03C006C700A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AC7907F71777E03C006C700A /* HelloGLTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloGLTests.m; sourceTree = "<group>"; };
+		AC7908011777E11E006C700A /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		AC7908021777E11E006C700A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		AC7908051777E125006C700A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +61,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC7908061777E125006C700A /* QuartzCore.framework in Frameworks */,
+				AC7908031777E11E006C700A /* GLKit.framework in Frameworks */,
+				AC7908041777E11E006C700A /* OpenGLES.framework in Frameworks */,
 				AC7907D51777E03C006C700A /* CoreGraphics.framework in Frameworks */,
 				AC7907D71777E03C006C700A /* UIKit.framework in Frameworks */,
 				AC7907D31777E03C006C700A /* Foundation.framework in Frameworks */,
@@ -96,6 +105,9 @@
 		AC7907D11777E03C006C700A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AC7908051777E125006C700A /* QuartzCore.framework */,
+				AC7908011777E11E006C700A /* GLKit.framework */,
+				AC7908021777E11E006C700A /* OpenGLES.framework */,
 				AC7907D21777E03C006C700A /* Foundation.framework */,
 				AC7907D41777E03C006C700A /* CoreGraphics.framework */,
 				AC7907D61777E03C006C700A /* UIKit.framework */,
@@ -151,6 +163,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AC7907FB1777E03C006C700A /* Build configuration list for PBXNativeTarget "HelloGL" */;
 			buildPhases = (
+				AC7908071777E4C7006C700A /* ShellScript */,
 				AC7907CB1777E03C006C700A /* Sources */,
 				AC7907CC1777E03C006C700A /* Frameworks */,
 				AC7907CD1777E03C006C700A /* Resources */,
@@ -234,6 +247,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AC7908071777E4C7006C700A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/bash\nbN=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbN=$((0x$bN))\nbN=$(($bN + 1))\nbN=$(printf \"%X\" $bN)\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $bN\" \"$INFOPLIST_FILE\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AC7907CB1777E03C006C700A /* Sources */ = {
