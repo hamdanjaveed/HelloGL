@@ -22,6 +22,7 @@
 		AC7908031777E11E006C700A /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC7908011777E11E006C700A /* GLKit.framework */; };
 		AC7908041777E11E006C700A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC7908021777E11E006C700A /* OpenGLES.framework */; };
 		AC7908061777E125006C700A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC7908051777E125006C700A /* QuartzCore.framework */; };
+		AC79080A1777E5E8006C700A /* HelloGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7908091777E5E8006C700A /* HelloGLView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		AC7908011777E11E006C700A /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		AC7908021777E11E006C700A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		AC7908051777E125006C700A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		AC7908081777E5E8006C700A /* HelloGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelloGLView.h; sourceTree = "<group>"; };
+		AC7908091777E5E8006C700A /* HelloGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelloGLView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +124,8 @@
 			children = (
 				AC7907E11777E03C006C700A /* HelloAppDelegate.h */,
 				AC7907E21777E03C006C700A /* HelloAppDelegate.m */,
+				AC7908081777E5E8006C700A /* HelloGLView.h */,
+				AC7908091777E5E8006C700A /* HelloGLView.m */,
 				AC7907E41777E03C006C700A /* Images.xcassets */,
 				AC7907D91777E03C006C700A /* Supporting Files */,
 			);
@@ -269,6 +274,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC79080A1777E5E8006C700A /* HelloGLView.m in Sources */,
 				AC7907DF1777E03C006C700A /* main.m in Sources */,
 				AC7907E31777E03C006C700A /* HelloAppDelegate.m in Sources */,
 			);
