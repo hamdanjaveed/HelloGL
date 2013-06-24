@@ -475,6 +475,7 @@
 				AC7907FD1777E03C006C700A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AC7907FE1777E03C006C700A /* Build configuration list for PBXNativeTarget "HelloGLTests" */ = {
 			isa = XCConfigurationList;
@@ -483,6 +484,7 @@
 				AC7908001777E03C006C700A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
