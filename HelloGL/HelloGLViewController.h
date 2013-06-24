@@ -1,5 +1,5 @@
 //
-//  HelloGLView.h
+//  HelloGLViewController.h
 //  HelloGL
 //
 //  Created by Hamdan Javeed on 2013-06-23.
@@ -8,6 +8,6 @@
 
 #import <GLKit/GLKit.h>
 
-@interface HelloGLView : GLKView
+@interface HelloGLViewController : GLKViewController
 
 @end
