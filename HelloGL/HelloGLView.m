@@ -7,11 +7,14 @@
 //
 
 #import "HelloGLView.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface HelloGLView() <GLKViewDelegate> {
     EAGLContext *context;
 }
 
+@property (nonatomic) float currentRed;
+@property (nonatomic, getter = isIncreasingRed) BOOL increasingRed;
 @end
 
 @implementation HelloGLView
@@ -26,13 +29,36 @@
         // set the view's context and delegate
         [self setContext:context];
         [self setDelegate:self];
+        
+        self.enableSetNeedsDisplay = NO;
+        CADisplayLink *displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(render:)];
+        [displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
     }
     return self;
 }
 
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect {
-    glClearColor(0.8, 0.4, 0.2, 1.0);
+    if (self.isIncreasingRed) {
+        self.currentRed += 0.01;
+    } else {
+        self.currentRed -= 0.01;
+    }
+    
+    if (self.currentRed >= 1.0) {
+        self.currentRed = 1.0;
+        self.increasingRed = NO;
+    }
+    if (self.currentRed <= 0.0) {
+        self.currentRed = 0.0;
+        self.increasingRed = YES;
+    }
+    
+    glClearColor(self.currentRed, 0.0, 0.0, 1.0);
     glClear(GL_COLOR_BUFFER_BIT);
+}
+
+- (void)render:(CADisplayLink *)displayLink {
+    [self display];
 }
 
 @end
